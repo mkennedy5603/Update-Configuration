@@ -4,10 +4,7 @@ var ruleTab = [0,1,0,1,0,1,0,1];
 function updateConfig(oldConfig, ruleTable){
   var newConfig = [];
   for(var i=0; i<oldConfig.length; i++){
-    var self = oldConfig[i];
-    var left = oldConfig[(i+oldConfig.length-1) % oldConfig.length];
-    var right = oldConfig[(i+1) % oldConfig.length];
-    var num = 4*left + 2*self + 1*right;
+    var num = 4*oldConfig[(i+oldConfig.length-1) % oldConfig.length] + 2*oldConfig[i] + 1*oldConfig[(i+1) % oldConfig.length];
     newConfig[i] = ruleTable[num];
   }
   return newConfig;
